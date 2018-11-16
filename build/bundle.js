@@ -8906,16 +8906,29 @@ module.exports = memoizeStringOnly;
 "use strict";
 
 
-//Root file for server
+var _express = __webpack_require__(68);
 
-var express = __webpack_require__(68);
-var React = __webpack_require__(26);
-var renderToString = __webpack_require__(147).renderToString;
-var Home = __webpack_require__(156).default;
-var app = express();
+var _express2 = _interopRequireDefault(_express);
+
+var _react = __webpack_require__(26);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _server = __webpack_require__(147);
+
+var _Home = __webpack_require__(156);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Root file for server 
+
+
+var app = (0, _express2.default)();
 
 app.get('/', function (req, res) {
-  var content = renderToString(React.createElement(Home, null));
+  var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
 
   res.send(content);
 });
@@ -27786,7 +27799,7 @@ module.exports = camelize;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+   value: true
 });
 
 var _react = __webpack_require__(26);
@@ -27796,11 +27809,26 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
-    return _react2.default.createElement(
-        'div',
-        null,
-        'hello '
-    );
+   return _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+         "div",
+         null,
+         _react2.default.createElement(
+            "h1",
+            null,
+            "shashi"
+         )
+      ),
+      _react2.default.createElement(
+         "button",
+         { onClick: function onClick() {
+               return console.log("Hi");
+            } },
+         " Click me "
+      )
+   );
 };
 
 exports.default = Home;
