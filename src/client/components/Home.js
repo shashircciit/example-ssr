@@ -5,7 +5,7 @@ const Home = () => {
                <div>
                   <h1>shashi</h1>
                 </div>
-               <button onClick={() => console.log("Hi")}> Click me </button>
+               <button onClick={() => console.log("Hi")} > Click me </button>
             </div>
 };
 
