@@ -1,14 +1,8 @@
-//client file to make client bundle
-
-
 const path = require('path');
-const merge=require('webpack-merge')
-const baseConfig=require('./webpack.base')
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.base.js');
 
-
-
-const config= {
-
+const config = {
   // Tell webpack the root file of our
   // server application
   entry: './src/client/client.js',
@@ -18,10 +12,7 @@ const config= {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
-  },
-
-
+  }
 };
 
-
-module.exports=merge(baseConfig,config)
+module.exports = merge(baseConfig, config);
