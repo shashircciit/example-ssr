@@ -24,18 +24,22 @@ class UsersList extends Component {
   }
 
   render() {
+    const print=JSON.stringify(this.props.login)
     return (
       <div>
         {this.head()}
         Here's a big list of users:
         <ul>{this.renderUsers()}</ul>
+        {
+         print!==null?( <ul>{print}</ul>):(<h1>error</h1>)
+        }
       </div>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
-  return { users: state.users };
+  return { users: state.users,login:state.login};
 }
 
 function loadData(store) {

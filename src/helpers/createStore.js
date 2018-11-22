@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware,compose } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import reducers from '../client/reducers';
@@ -9,10 +9,16 @@ export default req => {
     headers: { cookie: req.get('cookie') || '' }
   });
 
+  if (typeof window === 'undefined') {
+    global.window = {}
+}
+
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const store = createStore(
     reducers,
-    {},
-    applyMiddleware(thunk.withExtraArgument(axiosInstance))
+    {},composeEnhancers(
+    applyMiddleware(thunk.withExtraArgument(axiosInstance)))
   );
 
   return store;

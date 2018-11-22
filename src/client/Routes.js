@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import UsersListPage from './pages/UsersListPage';
 import NotFoundPage from './pages/NotFoundPage';
 import AdminsListPage from './pages/AdminsListPage';
+import LoginPage from '../client/pages/LoginPage';
 
 export default [
   {
@@ -21,6 +22,10 @@ export default [
       {
         ...UsersListPage,
         path: '/users'
+      },
+      {
+        ...LoginPage,
+        path: '/login'
       },
       {
         ...NotFoundPage
