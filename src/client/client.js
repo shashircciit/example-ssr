@@ -21,6 +21,7 @@ if (typeof window === 'undefined') {
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+
 const store = createStore(
   reducers,
   window.INITIAL_STATE,composeEnhancers(

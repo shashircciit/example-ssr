@@ -6,6 +6,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import AdminsListPage from './pages/AdminsListPage';
 import LoginPage from '../client/pages/LoginPage';
 
+
 export default [
   {
     ...App,
